@@ -8,13 +8,9 @@ const someArr1 = [
 ];
 
 function concatFirstDiagonal(arr) {
-    let result = "";
-    if (arr[0].length > 0) {
-        for (let i = 0; i < arr[0].length; i++)
-            result = result.concat(arr[i][i]);
-
-    }
-    return result;
+    return arr.reduce((acc, val, i) => {
+        return acc.concat(val[i])
+    }, "")
 }
 // solution:
 console.log(concatFirstDiagonal(someArr1));
